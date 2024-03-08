@@ -12,38 +12,38 @@ white paper](https://cdn.cboe.com/api/global/us_indices/governance/Volatility_In
     
 This project utilized a range of financial data sources to conduct the analysis, detailed as follows:
 
-    ### S&P500 Prices and VIX Prices
-    - **Source:** Extracted using the `tidyquant` package in R, pulling from Yahoo Finance datasets.
-    - **Period:** January 2011 to December 2020.
-    - **Details:** Consists of the closing prices of the indexes.
+### S&P500 Prices and VIX Prices
+- **Source:** Extracted using the `tidyquant` package in R, pulling from Yahoo Finance datasets.
+- **Period:** January 2011 to December 2020.
+- **Details:** Consists of the closing prices of the indexes.
+
+### 3-month Treasury Bills
+- **Source:** Daily data scraped from treasury.org.
+- **Period:** January 2011 to December 2020.
+- **Usage:** Used to determine the risk-free interest rates over the study period.
     
-    ### 3-month Treasury Bills
-    - **Source:** Daily data scraped from treasury.org.
-    - **Period:** January 2011 to December 2020.
-    - **Usage:** Used to determine the risk-free interest rates over the study period.
-        
-    ### VIX Futures
-    - **Source:** Historical data obtained from cboe.com/us/futures.
-    - **Period:** January 2013 to December 2020.
-    - **Processing:** Excel files for each period were merged in R to compile the complete dataset.
-    
-    ### Option Data
-    - **Provider:** OptionMetrics.
-    - **Period:** January 2011 to December 2020.
-    - **Details:** Includes bid and ask prices, volume, last trading day, expiration date, option type (call (C) or put (P)), implied volatility, and first-order Greeks (delta, theta, vega). Only traditional monthly options were analyzed, excluding weekly, quarterly, and PM settled options (symbols starting with "SPXW", "SPXQ", and "SPXPM") due to computational constraints.
-    
-    ### Data Cleaning Criteria
-    To work with liquid options to ensure data reliability, options were filtered based on the following criteria:
-    1. Volume lower than 10 were excluded.
-    2. Options whose last trading day did not match the data date (or the initial date) were excluded.
-    3. Entries with NA for implied volatility were removed.
-    4. Options missing best offer or best bid data were excluded.
-    5. Options with a spread (difference between best offer and best bid) greater than 2 were eliminated.
-    
-    ### Maturity Dates and Calculation Periods
-    - Maturity dates were set to the 3rd Friday of each month as we are working with monthly options.
-    - To mirror VIX price calculations, the period starting 30 days before each maturity was selected.
-    - Maturities selected ranged from 30 days to 1 year for the approximations of variance swaps, volatility swaps and forwards.
+### VIX Futures
+- **Source:** Historical data obtained from cboe.com/us/futures.
+- **Period:** January 2013 to December 2020.
+- **Processing:** Excel files for each period were merged in R to compile the complete dataset.
+
+### Option Data
+- **Provider:** OptionMetrics.
+- **Period:** January 2011 to December 2020.
+- **Details:** Includes bid and ask prices, volume, last trading day, expiration date, option type (call (C) or put (P)), implied volatility, and first-order Greeks (delta, theta, vega). Only traditional monthly options were analyzed, excluding weekly, quarterly, and PM settled options (symbols starting with "SPXW", "SPXQ", and "SPXPM") due to computational constraints.
+
+### Data Cleaning Criteria
+To work with liquid options to ensure data reliability, options were filtered based on the following criteria:
+1. Volume lower than 10 were excluded.
+2. Options whose last trading day did not match the data date (or the initial date) were excluded.
+3. Entries with NA for implied volatility were removed.
+4. Options missing best offer or best bid data were excluded.
+5. Options with a spread (difference between best offer and best bid) greater than 2 were eliminated.
+
+### Maturity Dates and Calculation Periods
+- Maturity dates were set to the 3rd Friday of each month as we are working with monthly options.
+- To mirror VIX price calculations, the period starting 30 days before each maturity was selected.
+- Maturities selected ranged from 30 days to 1 year for the approximations of variance swaps, volatility swaps and forwards.
 
 ## Analysis
 - **Comparative Analysis:** Evaluates the effectiveness of model-free replication strategies for VIX products, detailing the empirical and theoretical framework underpinning each method.
