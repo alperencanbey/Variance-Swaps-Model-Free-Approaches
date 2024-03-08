@@ -53,13 +53,13 @@ To work with liquid options to ensure data reliability, options were filtered ba
 - **Statistical Analysis:** Application of statistical tools to measure the performance, deviations, and effectiveness of each replication and pricing method.
 
 ## Results and Impact
-- The thesis successfully establishes theoretical bounds for VIX futures and variance swaps, providing a granular comparison of replication strategies.
+- The thesis establishes theoretical bounds for VIX futures by exploiting the properties of Jensen's inequality, and providing a comparison of replication strategies.
 - It uncovers the differences in pricing methodologies, highlighting their applicability in different market conditions and their implications for risk management.
 - The analysis sheds light on the challenges in replicating the VIX, especially during periods of heightened volatility, and proposes solutions through interpolation techniques.
 
 ## Challenges and Learnings
-- Encountered and overcame significant challenges related to data discrepancies and the application of complex model-free replication methods.
-- The research underscored the importance of continuous adaptation and innovation in financial modeling to accurately capture market dynamics.
+- Data discrepancies and the application of complex model-free replication methods.
+- Importance of continuous adaptation and innovation in financial modeling to accurately capture market dynamics.
 
 ## Contact Information
 For further discussion about this project or potential collaborations, please reach out to me at [alperen.canbey@upf.edu].
