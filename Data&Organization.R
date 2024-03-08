@@ -1,9 +1,4 @@
 #Organization of data: interest rates, spx closing prices, vix and vix futures closing prices, options
-getwd()
-
-setwd("C:/Users/Alperen Canbey/Desktop/Academia 3/MRes Thesis/yedek")
-
-
 library(tidyquant)
 library(tidyverse)
 library(plotly)
@@ -11,11 +6,12 @@ library(fs)
 
 
 #scraping the yields ##########################################
+#data is obtained by treasury.org
 library(xml2)
 library(XML)
 library(rvest)
 
-filenames <- list.files("C:/Users/Alperen Canbey/Desktop/yedek/yields", full.names=TRUE)
+filenames <- list.files("(insert your directoy)/yields", full.names=TRUE)
 #yields <- vector(mode = "list", length = 17)
 rates <- NA
 for (i in c(1:17)){
@@ -53,7 +49,6 @@ saveRDS(yields, file = "tbills.rds")
 #spx prices from yahoo finance#################################
 spx_prices  <- tq_get("^GSPC", get = "stock.prices", from = "2004-01-02")
 saveRDS(spx_prices, file = "spx_underlying.rds")
-
 
 spx_prices <- subset(spx_prices, spx_prices$date >=  "2020-01-01")
 ###############################################################
