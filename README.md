@@ -4,6 +4,8 @@
 This thesis investigates volatility derivatives, focusing on their role in replication of CBOE's Volatility Index (VIX) and assigning theoretical bounds for VIX futures. It includes a comparative analysis of various pricing and replication methods for variance swaps and variance swap forwards, employing both traditional and novel approaches to model-free replication, such as [Carr and Lee (2007)](https://www.math.uchicago.edu/~rl/OVSwithAppendices.pdf), [Demeterfi et al. (1999)](https://emanuelderman.com/wp-content/uploads/1999/02/gs-volatility_swaps.pdf), [Fukasawa et al. (2011)](https://www-mmds.sigmath.es.osaka-u.ac.jp/structure/activity/vxj/VXJ_DP.pdf) and [CBOE
 white paper](https://cdn.cboe.com/api/global/us_indices/governance/Volatility_Index_Methodology_Cboe_Volatility_Index.pdf) are revisited, besides the [at-the-money (ATM) implied volatility (IV)](https://books.google.es/books/about/The_Black_scholes_Formula_is_Nearly_Line.html?id=6z8ptwAACAAJ&redir_esc=y) and the [Rolloos and Arslan (2015)](http://spekulant.com.pl/article/Volatility%20products/Taylor-made%20volatility%20swaps.pdf) methods.
 
+Note: Full paper and the presentation can be found in this directory.
+
 ## Tools Used
 - **R:** Utilized for data analysis, visualizations and financial data manipulation.
 - **LaTeX:** Employed for the documentation and presentation of the thesis.
